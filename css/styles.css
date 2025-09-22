@@ -1,0 +1,17 @@
+.container{
+  text-align: center;
+}
+
+button {
+  border: none;
+  padding: 10px 0;
+  color: white;
+  font-weight: bold;
+  width: 200px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#server-button{
+  background: green;
+}
