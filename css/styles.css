@@ -1,17 +1,46 @@
-.container{
-  text-align: center;
+body {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../img/fall.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;
+  z-index: 1;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
+.container{
+  text-align: center;
+
+}
+
+.horizons-server{
+  max-width: 80%;
+    background-color: white;
+    margin: auto;
+    border-color: black;
+    border-style: solid;
+    
+}
 button {
   border: none;
   padding: 10px 0;
   color: white;
   font-weight: bold;
-  width: 200px;
+  width: 25%;
   margin-bottom: 5px;
   border-radius: 5px;
 }
 
 #server-button{
   background: green;
+}
+#save-btn{
+  background-color: rgb(88, 88, 45);
 }
