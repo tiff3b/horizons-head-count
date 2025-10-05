@@ -24,7 +24,6 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .add-staff {
@@ -36,31 +35,49 @@ img {
   text-align: center;
   list-style: none;
   padding-left: 0;
+    text-transform: uppercase;
+  font-size: 2em;
 }
 .end-list {
   background-color: rgb(160, 116, 33);
 }
 .horizons-server{
-  max-width: 80%;
-    background-color: white;
-    margin: auto;
-    border-color: black;
-    border-style: solid;
-    
+  max-width: 50%;
+    margin: auto;   
 }
+
 button {
   border: none;
   padding: 10px 0;
   color: white;
   font-weight: bold;
-  width: 25%;
+  width: 45%;
   margin-bottom: 5px;
   border-radius: 5px;
+  background-color: green;
 }
 
-#server-button{
-  background: green;
+.server-entry {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+  padding: 15px 0;
 }
-#save-btn{
-  background-color: rgb(88, 88, 45);
+.count-display{
+  width: 100%;
+  font-size: 50px;
+}
+.counter-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 50%;
 }
