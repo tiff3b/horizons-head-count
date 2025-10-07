@@ -1,62 +1,92 @@
-body {
-  position: relative;
-  overflow: hidden;
-  background-image: url("../img/fall.png");
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body{
+  background-attachment: fixed;
+  background-image: url("../img/steakhouse.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   margin: 0;
+  padding: 0;
   min-height: 100vh;
-  z-index: 1;
 }
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0;
 }
-
 .container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 600px;
+}
+h1 {
   text-align: center;
-
+  color: skyblue;
+  font-style: italic ;
+}
+.background-theme{
+  display: flex;
+  flex-direction: column;
+  line-height: 45px;
+  padding-bottom: 15px;
+  color: deepskyblue;
+}
+#backgrounds, #server{
+  text-align: center;
 }
 .add-server{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  line-height: 30px;
+  color: deepskyblue;
 }
-
 .add-staff {
-  background-color: green;
-  margin-top: 10px;
+  border: none;
+  padding: 10px 0;
+  font-weight: bold;
+  width: 65%;
+  margin: 25px 0 15px 0;
+  color: darkblue;
+  background-color: lightgray;
 }
+.end-list {
+  border: none;
+  padding: 10px 0;
+  font-weight: bold;
+  width: 65%;
+  margin-bottom: 5px;
+  color: darkblue;
+  background-color: lightgray;
+}
+/***********************PAGE 2*********************/
 
+.horizons-server{
+  width: 90%;  
+}
 .waitstaff {
   text-align: center;
   list-style: none;
   padding-left: 0;
-    text-transform: uppercase;
-  font-size: 2em;
+  text-transform: uppercase;
+  font-size: 1.5em;
 }
-.end-list {
-  background-color: rgb(160, 116, 33);
-}
-.horizons-server{
-  max-width: 50%;
-    margin: auto;   
-}
-
-button {
-  border: none;
-  padding: 10px 0;
-  color: white;
-  font-weight: bold;
-  width: 45%;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  background-color: green;
-}
-
 .server-entry {
   display: flex;
   flex-flow: column nowrap;
@@ -64,20 +94,69 @@ button {
   gap: 20px;
   margin-bottom: 15px;
   border-radius: 5px;
-  border-color: black;
+  border-color: darkgray;
   border-style: solid;
   padding: 15px 0;
+  background-color: lightgray;
 }
-.count-display{
-  width: 100%;
-  font-size: 50px;
+.server-entry span {
+  color: darkblue;
+  font-style: italic;
 }
 .counter-container {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   gap: 5px;
-  width: 50%;
+  width: 90%;
+}
+.count-display{
+  width: 100%;
+  font-size: 1.5em;
+  padding-bottom: 10px;
+  color: darkblue;
+}
+.horizons-server button {
+  border: none;
+  padding: 10px 0;
+  color: lightgray;
+  font-weight: bold;
+  width: 20%;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  background-color: darkblue;
+}
+/*****************BACKGROUNDS **************/
+
+body.fall{
+  background-attachment: fixed;
+  background-image: url("../img/autumn.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  
+}
+body.halloween{
+  background-attachment: fixed;
+  background-image: url("../img/halloween.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;
+
+}
+body.thanksgiving{
+  background-attachment: fixed;
+  background-image: url("../img/thanksgiving.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;
+
 }

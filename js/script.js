@@ -1,8 +1,25 @@
+const body = document.body;
+let backgroundTheme = document.querySelector(".background-theme")
+const background = document.getElementById("backgrounds")
 const addWaitress = document.querySelector(".add-staff")
 let addInput = document.querySelector(".add-server input")
 let addServerSection = document.querySelector(".add-server")
 let waitStaff = document.querySelector(".waitstaff")
 let doneButton = document.querySelector(".end-list")
+
+background.addEventListener("change", function (){
+    let theme = background.value;
+
+    body.classList.remove("fall", "halloween", "thanksgiving");
+
+    if (theme === "fall"){
+        body.classList.add("fall");
+    }   else if (theme === "halloween"){
+        body.classList.add("halloween");
+    }   else if (theme === "thanksgiving"){
+        body.classList.add("thanksgiving");
+    }
+});
 
 addWaitress.addEventListener("click", function (){
     let serverName = addInput.value.trim();
@@ -14,6 +31,7 @@ addWaitress.addEventListener("click", function (){
 
 doneButton.addEventListener("click", function (){
     addServerSection.style.display="none";
+    backgroundTheme.style.display="none";
 });
 
 let addToFloor = function (name){
