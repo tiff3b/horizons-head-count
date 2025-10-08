@@ -124,23 +124,49 @@ h1 {
   font-weight: bold;
   width: 20%;
   margin-bottom: 5px;
-  border-radius: 33px;
+  border-radius: 25px;
   background-color: darkblue;
   font-size: .7em;
 }
-/*****************BACKGROUNDS **************/
+              /*****************THEMES **************/
+/********************FALL**************/
 
 body.fall{
   background-attachment: fixed;
-  background-image: url("../img/autumn.png");
+  background-image: url("../img/fall.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  
+  min-height: 100vh; 
 }
+.fall h1{
+  color: #e07d45;
+}
+.fall .background-theme, .fall .add-server{
+  color: #495235;
+}
+.fall .add-staff, .fall .end-list{
+  color: #f4ddb8;
+  background-color: #8f9562;
+}
+.fall .server-entry{
+  border-color:#495235;
+  background-color: #da983c;
+}
+.fall .server-entry span {
+  color: #495235;
+}
+.fall .count-display{
+  color: #495235;
+}
+.fall .horizons-server button {
+  color:#f4ddb8;
+  background-color: #495235;
+}
+
+/**********************HALLOWEEN***************/
 body.halloween{
   background-attachment: fixed;
   background-image: url("../img/halloween.png");

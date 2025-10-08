@@ -94,11 +94,6 @@ let addToFloor = function (name){
             return lowCount - highCount;
         });
 
-    //    let lowCount = headCount.reduce((minEntry, currentEntry) => {
-           // let minCount = parseInt(minEntry.querySelector(".count-display").textContent);
-           // let currentCount = parseInt(currentEntry.querySelector(".count-display").textContent);
-          //  return currentCount < minCount ? currentEntry : minEntry;
-    //    });
     headCount.forEach(entry=>{
         waitStaff.appendChild(entry);
     });
