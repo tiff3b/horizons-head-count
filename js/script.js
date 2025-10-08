@@ -77,12 +77,40 @@ let addToFloor = function (name){
             countDisplay.textContent = count - 1;
         }
     });
+    
+    let saveCount = document.createElement("button");
+        saveCount.textContent = "SAVE";
+        saveCount.addEventListener("click", function (){
+            sortNextServer();
+    });
+
+    function sortNextServer(){
+        let headCount = Array.from(document.querySelectorAll(".server-entry"));
+        if (headCount.length === 0) return;
+
+        headCount.sort((a,b) => {
+            let lowCount = parseInt(a.querySelector(".count-display").textContent);
+            let highCount = parseInt(b.querySelector(".count-display").textContent);
+            return lowCount - highCount;
+        });
+
+    //    let lowCount = headCount.reduce((minEntry, currentEntry) => {
+           // let minCount = parseInt(minEntry.querySelector(".count-display").textContent);
+           // let currentCount = parseInt(currentEntry.querySelector(".count-display").textContent);
+          //  return currentCount < minCount ? currentEntry : minEntry;
+    //    });
+    headCount.forEach(entry=>{
+        waitStaff.appendChild(entry);
+    });
+        waitStaff.insertBefore(lowCount, waitStaff.firstChild);
+    }
 
     countContainer.appendChild(countDisplay);
     countContainer.appendChild(quickTwo);
     countContainer.appendChild(quickFour);
     countContainer.appendChild(plusBtn);
     countContainer.appendChild(minusBtn);
+    countContainer.appendChild(saveCount);
 
     serverList.appendChild(nameSpan);
     serverList.appendChild(countContainer);

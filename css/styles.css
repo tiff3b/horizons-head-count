@@ -119,13 +119,14 @@ h1 {
 }
 .horizons-server button {
   border: none;
-  padding: 10px 0;
+  padding: 15px 0;
   color: lightgray;
   font-weight: bold;
   width: 20%;
   margin-bottom: 5px;
-  border-radius: 25px;
+  border-radius: 33px;
   background-color: darkblue;
+  font-size: .7em;
 }
 /*****************BACKGROUNDS **************/
 
