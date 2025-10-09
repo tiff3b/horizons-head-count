@@ -7,6 +7,8 @@ let addServerSection = document.querySelector(".add-server")
 let waitStaff = document.querySelector(".waitstaff")
 let doneButton = document.querySelector(".end-list")
 
+window.addEventListener("DOMContentLoaded", loadFromLocalStorage);
+
 background.addEventListener("change", function (){
     let theme = background.value;
 
@@ -19,6 +21,8 @@ background.addEventListener("change", function (){
     }   else if (theme === "thanksgiving"){
         body.classList.add("thanksgiving");
     }
+
+    localStorage.setItem("theme", theme);
 });
 
 addWaitress.addEventListener("click", function (){
@@ -26,6 +30,7 @@ addWaitress.addEventListener("click", function (){
     if (serverName !==""){
         addToFloor(serverName);
         addInput.value= "";
+        saveToLocalStorage();
     }
 });
 
@@ -53,6 +58,7 @@ let addToFloor = function (name){
     quickTwo.addEventListener("click", function (){
         let count =parseInt(countDisplay.textContent);
         countDisplay.textContent = count + 2;
+        saveToLocalStorage();
     });
 
     let quickFour = document.createElement("button");
@@ -60,6 +66,7 @@ let addToFloor = function (name){
     quickFour.addEventListener("click", function (){
         let count =parseInt(countDisplay.textContent);
         countDisplay.textContent = count + 4;
+        saveToLocalStorage();
     });
 
     let plusBtn = document.createElement("button");
@@ -67,6 +74,7 @@ let addToFloor = function (name){
     plusBtn.addEventListener("click", function (){
         let count = parseInt(countDisplay.textContent);
         countDisplay.textContent = count + 1;
+        saveToLocalStorage();
     });
 
     let minusBtn = document.createElement("button");
@@ -75,6 +83,7 @@ let addToFloor = function (name){
         let count = parseInt(countDisplay.textContent);
         if (count > 0) {
             countDisplay.textContent = count - 1;
+            saveToLocalStorage();
         }
     });
     
@@ -83,22 +92,6 @@ let addToFloor = function (name){
         saveCount.addEventListener("click", function (){
             sortNextServer();
     });
-
-    function sortNextServer(){
-        let headCount = Array.from(document.querySelectorAll(".server-entry"));
-        if (headCount.length === 0) return;
-
-        headCount.sort((a,b) => {
-            let lowCount = parseInt(a.querySelector(".count-display").textContent);
-            let highCount = parseInt(b.querySelector(".count-display").textContent);
-            return lowCount - highCount;
-        });
-
-    headCount.forEach(entry=>{
-        waitStaff.appendChild(entry);
-    });
-        waitStaff.insertBefore(lowCount, waitStaff.firstChild);
-    }
 
     countContainer.appendChild(countDisplay);
     countContainer.appendChild(quickTwo);
@@ -113,6 +106,37 @@ let addToFloor = function (name){
     waitStaff.appendChild(serverList);
 };
 
+    function sortNextServer(){
+        let headCount = Array.from(document.querySelectorAll(".server-entry"));
+        if (headCount.length === 0) return;
 
+        headCount.sort((a,b) => {
+            let lowCount = parseInt(a.querySelector(".count-display").textContent);
+            let highCount = parseInt(b.querySelector(".count-display").textContent);
+            return lowCount - highCount;
+        });
+
+    waitStaff.innerHTML = '';
+    headCount.forEach(entry=>{
+        waitStaff.appendChild(entry);
+    });
+        saveToLocalStorage();
+}
+
+function loadFromLocalStorage() {
+    const saved = JSON.parse(localStorage.getItem("servers"));
+    const theme = localStorage.getItem("theme");
+
+    if (theme) {
+        background.value = theme;
+        body.classList.add(theme);
+    }
+
+    if (saved && Array.isArray(saved)) {
+        saved.forEach(server => {
+            addToFloor(server.name, server.count);
+        });
+    }
+}
 
 
