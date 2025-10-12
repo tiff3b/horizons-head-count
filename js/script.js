@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", loadFromLocalStorage);
 background.addEventListener("change", function (){
     let theme = background.value;
 
-    body.classList.remove("fall", "halloween", "thanksgiving");
+    body.classList.remove("fall", "halloween", "thanksgiving", "christmas", "new-year", "Winter");
 
     if (theme === "fall"){
         body.classList.add("fall");
@@ -20,6 +20,12 @@ background.addEventListener("change", function (){
         body.classList.add("halloween");
     }   else if (theme === "thanksgiving"){
         body.classList.add("thanksgiving");
+    }   else if (theme === "christmas"){
+        body.classList.add("christmas");
+    }   else if (theme === "new-year"){
+        body.classList.add("new-year");
+    }   else if (theme === "winter"){
+        body.classList.add("winter");
     }
 
     localStorage.setItem("theme", theme);

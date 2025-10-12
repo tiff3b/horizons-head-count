@@ -175,8 +175,35 @@ body.halloween{
   background-position: center center;
   margin: 0;
   min-height: 100vh;
-
 }
+.halloween h1{
+  color: #f4831b;
+  margin-top: 80px;
+  padding-top: 30px;
+}
+.halloween .background-theme, .halloween .add-server{
+  color: #63c328;
+}
+.halloween .add-staff, .halloween .end-list{
+  color: #63c328;
+  background-color: #902ebb;
+}
+.halloween .server-entry{
+  border-color:#1c1c1c;
+  background-color: #63c328;
+}
+.halloween .server-entry span {
+  color: #1c1c1c;
+}
+.halloween .count-display{
+  color: #1c1c1c;
+}
+.halloween .horizons-server button {
+  color:#1c1c1c;
+  background-color: #902ebb;
+}
+
+/***********************THANKSGIVING****************/
 body.thanksgiving{
   background-attachment: fixed;
   background-image: url("../img/thanksgiving.png");
@@ -184,6 +211,143 @@ body.thanksgiving{
   background-repeat: no-repeat;
   background-position: center center;
   margin: 0;
-  min-height: 100vh;
+  min-height: 100vh;  
+}
+.thanksgiving h1{
+  color: #9d221e;
+  margin-top: 80px;
+  padding-top: 80px;
+}
+.thanksgiving .background-theme, .thanksgiving .add-server{
+  color: #382615;
+}
+.thanksgiving .add-staff, .thanksgiving .end-list{
+  color: #382615;
+  background-color: #f8b12c;
+}
+.thanksgiving .server-entry{
+  border-color:#382615;
+  background-color: #f8b12c;
+}
+.thanksgiving .server-entry span {
+  color: #382615;
+}
+.thanksgiving .count-display{
+  color: #382615;
+}
+.thanksgiving .horizons-server button {
+  color:#382615;
+  background-color: #859d3c;
+}
 
+/********************CHRISTMAS******************/
+body.christmas{
+  background-attachment: fixed;
+  background-image: url("../img/christmas.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;  
+}
+.christmas h1{
+  color: #b90e11;
+  margin-top: 80px;
+  padding-top: 40px;
+}
+.christmas .background-theme, .christmas .add-server{
+  color: #b90e11;
+}
+.christmas .add-staff, .christmas .end-list{
+  color: #c9a75d;
+  background-color: #28440f;
+}
+.christmas .server-entry{
+  border-color:#5b0d1d;
+  background-color: #28440f;
+}
+.christmas .server-entry span {
+  color: #b90e11;
+}
+.christmas .count-display{
+  color: #b90e11;
+}
+.christmas .horizons-server button {
+  color:#5b0d1d;
+  background-color: #c9a75d;
+}
+
+/******************NEW YEARS****************/
+body.new-year{
+  background-attachment: fixed;
+  background-image: url("../img/new-year.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;  
+}
+.new-year h1{
+  color: #04030b;
+  margin-top: 0;
+  padding-top: 25px;
+}
+.new-year .background-theme, .new-year .add-server{
+  color: #04030b;
+}
+.new-year .add-staff, .new-year .end-list{
+  color: #04030b;
+  background-color: #f0d5e2;
+}
+.new-year .server-entry{
+  border-color:#04030b;
+  background-color: #f0d5e2;
+}
+.new-year .server-entry span {
+  color: #04030b;
+}
+.new-year .count-display{
+  color: #04030b;
+}
+.new-year .horizons-server button {
+  color:#04030b;
+  background-color: #8dccf0;
+}
+
+/**************WINTER****************/
+
+body.winter{
+  background-attachment: fixed;
+  background-image: url("../img/winter.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;  
+}
+.winter h1{
+  color: #1ae3fb;
+  margin-top: 0;
+  padding-top: 25px;
+}
+.winter .background-theme, .winter .add-server{
+  color: #1ae3fb;
+}
+.winter .add-staff, .winter .end-list{
+  color: #04030b;
+  background-color: #a2ffe5;
+}
+.winter .server-entry{
+  border-color:#2d50b6;
+  background-color: #1ae3f6;
+}
+.winter .server-entry span {
+  color: #04030b;
+}
+.winter .count-display{
+  color: #04030b;
+}
+.winter .horizons-server button {
+  color:#04030b;
+  background-color: #ad53d7;
 }
