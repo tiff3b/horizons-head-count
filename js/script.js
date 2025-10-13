@@ -6,13 +6,31 @@ let addInput = document.querySelector(".add-server input")
 let addServerSection = document.querySelector(".add-server")
 let waitStaff = document.querySelector(".waitstaff")
 let doneButton = document.querySelector(".end-list")
+let endNight = document.querySelector(".end-night")
+
+function loadFromLocalStorage() {
+    const saved = JSON.parse(localStorage.getItem("servers"));
+    const theme = localStorage.getItem("theme");
+
+    if (theme) {
+        background.value = theme;
+        body.classList.add(theme);
+    }
+
+    if (saved && Array.isArray(saved)) {
+        saved.forEach(server => {
+            addToFloor(server.name, server.count);
+        });
+    }
+}
 
 window.addEventListener("DOMContentLoaded", loadFromLocalStorage);
 
 background.addEventListener("change", function (){
     let theme = background.value;
 
-    body.classList.remove("fall", "halloween", "thanksgiving", "christmas", "new-year", "Winter");
+    body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter");
+    localStorage.removeItem("theme");
 
     if (theme === "fall"){
         body.classList.add("fall");
@@ -26,6 +44,8 @@ background.addEventListener("change", function (){
         body.classList.add("new-year");
     }   else if (theme === "winter"){
         body.classList.add("winter");
+    }   else if(theme === "horizons"){
+        body.classList.add("horizons");
     }
 
     localStorage.setItem("theme", theme);
@@ -45,7 +65,7 @@ doneButton.addEventListener("click", function (){
     backgroundTheme.style.display="none";
 });
 
-let addToFloor = function (name){
+let addToFloor = function (name, count = 0){
     let serverList = document.createElement("li");
     serverList.classList.add("server-entry");
     
@@ -57,7 +77,7 @@ let addToFloor = function (name){
 
     let countDisplay = document.createElement("div");
     countDisplay.classList.add("count-display");
-    countDisplay.textContent = "0";
+    countDisplay.textContent = count;
 
     let quickTwo = document.createElement("button");
     quickTwo.textContent = "+2";
@@ -112,16 +132,14 @@ let addToFloor = function (name){
     waitStaff.appendChild(serverList);
 };
 
-    function sortNextServer(){
-        let headCount = Array.from(document.querySelectorAll(".server-entry"));
-        if (headCount.length === 0) return;
-
+function sortNextServer(){
+    let headCount = Array.from(document.querySelectorAll(".server-entry"));
+    if (headCount.length === 0) return;
         headCount.sort((a,b) => {
             let lowCount = parseInt(a.querySelector(".count-display").textContent);
             let highCount = parseInt(b.querySelector(".count-display").textContent);
             return lowCount - highCount;
         });
-
     waitStaff.innerHTML = '';
     headCount.forEach(entry=>{
         waitStaff.appendChild(entry);
@@ -129,20 +147,30 @@ let addToFloor = function (name){
         saveToLocalStorage();
 }
 
-function loadFromLocalStorage() {
-    const saved = JSON.parse(localStorage.getItem("servers"));
-    const theme = localStorage.getItem("theme");
+endNight.addEventListener("click", function(){
+    waitStaff.innerHTML= '';
+    background.value = "horizons";
+    body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter");
+    body.classList.add("horizons");
+    localStorage.setItem("theme", "horizons");
+    localStorage.removeItem("servers");
 
-    if (theme) {
-        background.value = theme;
-        body.classList.add(theme);
-    }
+    addServerSection.style.display="flex";
+    backgroundTheme.style.display="flex";
+    addInput.value = "";
+});
 
-    if (saved && Array.isArray(saved)) {
-        saved.forEach(server => {
-            addToFloor(server.name, server.count);
-        });
-    }
+function saveToLocalStorage() {
+    const serverEntries = document.querySelectorAll(".server-entry");
+    const servers = Array.from(serverEntries).map(entry => {
+        const name = entry.querySelector("span").textContent;
+        const count = parseInt(entry.querySelector(".count-display").textContent);
+        return { name, count };
+    });
+
+    localStorage.setItem("servers", JSON.stringify(servers));
 }
+
+
 
 

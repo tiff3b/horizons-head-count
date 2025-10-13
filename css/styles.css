@@ -7,23 +7,16 @@ html, body{
   padding: 0;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: #8dccf0;
 }
-body{
-  background-attachment: fixed;
-  background-image: url("../img/steakhouse.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0;
 }
+
 .container{
   display: flex;
   flex-flow: column nowrap;
@@ -34,9 +27,9 @@ img {
   box-sizing: border-box;
   max-width: 600px;
 }
+
 h1 {
   text-align: center;
-  color: skyblue;
   font-style: italic ;
 }
 .background-theme{
@@ -44,9 +37,8 @@ h1 {
   flex-direction: column;
   line-height: 45px;
   padding-bottom: 15px;
-  color: deepskyblue;
 }
-#backgrounds, #server{
+#backgrounds, .horizons #server{
   text-align: center;
 }
 .add-server{
@@ -55,7 +47,6 @@ h1 {
   justify-content: center;
   align-items: center;
   line-height: 30px;
-  color: deepskyblue;
 }
 .add-staff {
   border: none;
@@ -63,8 +54,6 @@ h1 {
   font-weight: bold;
   width: 65%;
   margin: 25px 0 15px 0;
-  color: darkblue;
-  background-color: lightgray;
 }
 .end-list {
   border: none;
@@ -72,8 +61,6 @@ h1 {
   font-weight: bold;
   width: 65%;
   margin-bottom: 5px;
-  color: darkblue;
-  background-color: lightgray;
 }
 /***********************PAGE 2*********************/
 
@@ -97,10 +84,9 @@ h1 {
   border-color: darkgray;
   border-style: solid;
   padding: 15px 0;
-  background-color: lightgray;
+
 }
 .server-entry span {
-  color: darkblue;
   font-style: italic;
 }
 .counter-container {
@@ -115,20 +101,79 @@ h1 {
   width: 100%;
   font-size: 1.5em;
   padding-bottom: 10px;
-  color: darkblue;
+
 }
-.horizons-server button {
+.counter-container button {
   border: none;
   padding: 15px 0;
-  color: lightgray;
   font-weight: bold;
   width: 20%;
   margin-bottom: 5px;
   border-radius: 25px;
-  background-color: darkblue;
   font-size: .7em;
 }
-              /*****************THEMES **************/
+.end-night{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43%;
+  border-radius: 0px;
+}
+button.reset {
+  padding: 6px;
+}
+/*****************THEMES **************/
+
+/****************HORIZONS*************/
+body.horizons{
+  background-attachment: fixed;
+  background-image: url("../img/steakhouse.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.horizons h1 {
+  color: skyblue;
+}
+.horizons .background-theme{
+  color: deepskyblue;
+}
+.horizons .add-server{
+  color: deepskyblue;
+}
+.horizons .add-staff {
+  color: darkblue;
+  background-color: lightgray;
+}
+.horizons .end-list {
+  color: darkblue;
+  background-color: lightgray;
+}
+.horizons .server-entry {
+  border-color: darkgray;
+  border-style: solid;
+  background-color: lightgray;
+}
+.horizons .server-entry span {
+  color: darkblue;
+}
+.horizons .count-display{
+  color: darkblue;
+}
+.horizons .counter-container button {
+  color: lightgray;
+  font-weight: bold;
+  background-color: darkblue;
+}
+.horizons .reset {
+  color: lightgray;
+  background-color: darkblue;
+}
+
 /********************FALL**************/
 
 body.fall{
@@ -161,9 +206,13 @@ body.fall{
 .fall .count-display{
   color: #495235;
 }
-.fall .horizons-server button {
+.fall .counter-container button {
   color:#f4ddb8;
   background-color: #495235;
+}
+.fall .reset {
+  color: #8f9562;
+  background-color: #f4ddb8;
 }
 
 /**********************HALLOWEEN***************/
@@ -198,9 +247,13 @@ body.halloween{
 .halloween .count-display{
   color: #1c1c1c;
 }
-.halloween .horizons-server button {
+.halloween .counter-container button {
   color:#1c1c1c;
   background-color: #902ebb;
+}
+.halloween .reset {
+  color: #902ebb;
+  background-color: #63c328;
 }
 
 /***********************THANKSGIVING****************/
@@ -235,11 +288,14 @@ body.thanksgiving{
 .thanksgiving .count-display{
   color: #382615;
 }
-.thanksgiving .horizons-server button {
+.thanksgiving .counter-container button {
   color:#382615;
   background-color: #859d3c;
 }
-
+.thanksgiving .reset {
+  color: #f8b12c;
+  background-color: #382615;
+}
 /********************CHRISTMAS******************/
 body.christmas{
   background-attachment: fixed;
@@ -272,11 +328,14 @@ body.christmas{
 .christmas .count-display{
   color: #b90e11;
 }
-.christmas .horizons-server button {
+.christmas .counter-container button {
   color:#5b0d1d;
   background-color: #c9a75d;
 }
-
+.christmas .reset {
+  color: #28440f;
+  background-color: #c9a75d;
+}
 /******************NEW YEARS****************/
 body.new-year{
   background-attachment: fixed;
@@ -309,9 +368,13 @@ body.new-year{
 .new-year .count-display{
   color: #04030b;
 }
-.new-year .horizons-server button {
+.new-year .counter-container button {
   color:#04030b;
   background-color: #8dccf0;
+}
+.new-year .reset {
+  color: #f0d5e2;
+  background-color: #04030b;
 }
 
 /**************WINTER****************/
@@ -347,7 +410,11 @@ body.winter{
 .winter .count-display{
   color: #04030b;
 }
-.winter .horizons-server button {
+.winter .counter-container button {
   color:#04030b;
   background-color: #ad53d7;
+}
+.winter .reset {
+  color: #a2ffe5;
+  background-color: #04030b;
 }
