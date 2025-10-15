@@ -121,6 +121,7 @@ h1 {
 }
 button.reset {
   padding: 6px;
+  margin-bottom: 40px;
 }
 /*****************THEMES **************/
 
@@ -128,12 +129,14 @@ button.reset {
 body.horizons{
   background-attachment: fixed;
   background-image: url("../img/steakhouse.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 100%;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .horizons h1 {
@@ -179,12 +182,14 @@ body.horizons{
 body.fall{
   background-attachment: fixed;
   background-image: url("../img/fall.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 100%;
   margin: 0;
   padding: 0;
-  min-height: 100vh; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
 }
 .fall h1{
   color: #e07d45;
@@ -219,11 +224,14 @@ body.fall{
 body.halloween{
   background-attachment: fixed;
   background-image: url("../img/halloween.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100%;
   margin: 0;
-  min-height: 100vh;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 .halloween h1{
   color: #f4831b;
@@ -260,11 +268,14 @@ body.halloween{
 body.thanksgiving{
   background-attachment: fixed;
   background-image: url("../img/thanksgiving.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100%;
   margin: 0;
-  min-height: 100vh;  
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;   
 }
 .thanksgiving h1{
   color: #9d221e;
@@ -300,11 +311,14 @@ body.thanksgiving{
 body.christmas{
   background-attachment: fixed;
   background-image: url("../img/christmas.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100%;
   margin: 0;
-  min-height: 100vh;  
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
 }
 .christmas h1{
   color: #b90e11;
@@ -340,11 +354,14 @@ body.christmas{
 body.new-year{
   background-attachment: fixed;
   background-image: url("../img/new-year.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100%;
   margin: 0;
-  min-height: 100vh;  
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
 }
 .new-year h1{
   color: #04030b;
@@ -382,11 +399,14 @@ body.new-year{
 body.winter{
   background-attachment: fixed;
   background-image: url("../img/winter.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 100%;
   margin: 0;
-  min-height: 100vh;  
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
 }
 .winter h1{
   color: #1ae3fb;
@@ -402,7 +422,7 @@ body.winter{
 }
 .winter .server-entry{
   border-color:#2d50b6;
-  background-color: #1ae3f6;
+  background-color: #a2ffe5;
 }
 .winter .server-entry span {
   color: #04030b;
@@ -412,9 +432,36 @@ body.winter{
 }
 .winter .counter-container button {
   color:#04030b;
-  background-color: #ad53d7;
+  background-color: #1ae3fb;
 }
 .winter .reset {
   color: #a2ffe5;
   background-color: #04030b;
+}
+
+/*****************DUCK*****************/
+
+body.duck{
+  background-attachment: fixed;
+  background-image: url("../img/duck.png");
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
+}
+.duck .add-staff, .duck .end-list{
+  background-color: #fecc47;
+}
+.duck .server-entry{
+  background-color: #f6ac3d;
+}
+.duck .counter-container button {
+  background-color: #09bac0;
+}
+.duck .reset {
+  background-color: #ee6b2b;
 }

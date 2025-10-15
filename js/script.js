@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", loadFromLocalStorage);
 background.addEventListener("change", function (){
     let theme = background.value;
 
-    body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter");
+    body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter", "duck");
     localStorage.removeItem("theme");
 
     if (theme === "fall"){
@@ -46,6 +46,8 @@ background.addEventListener("change", function (){
         body.classList.add("winter");
     }   else if(theme === "horizons"){
         body.classList.add("horizons");
+    }   else if(theme === "duck"){
+        body.classList.add("duck");
     }
 
     localStorage.setItem("theme", theme);
@@ -150,7 +152,7 @@ function sortNextServer(){
 endNight.addEventListener("click", function(){
     waitStaff.innerHTML= '';
     background.value = "horizons";
-    body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter");
+    body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter", "duck");
     body.classList.add("horizons");
     localStorage.setItem("theme", "horizons");
     localStorage.removeItem("servers");
