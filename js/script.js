@@ -97,6 +97,14 @@ let addToFloor = function (name, count = 0){
         saveToLocalStorage();
     });
 
+    let quickSix = document.createElement("button");
+    quickSix.textContent = "+6";
+    quickSix.addEventListener("click", function (){
+        let count =parseInt(countDisplay.textContent);
+        countDisplay.textContent = count + 6;
+        saveToLocalStorage();
+    });
+
     let plusBtn = document.createElement("button");
     plusBtn.textContent = "+";
     plusBtn.addEventListener("click", function (){
@@ -121,12 +129,24 @@ let addToFloor = function (name, count = 0){
             sortNextServer();
     });
 
+    let serverDone = document.createElement("button");
+        serverDone.textContent = "CUT";
+        serverDone.addEventListener("click", function (){
+            if (confirm("Are you sure you want to remove server?") == true){
+                serverList.remove();
+                saveToLocalStorage();
+            }              
+        });
+
+
     countContainer.appendChild(countDisplay);
     countContainer.appendChild(quickTwo);
     countContainer.appendChild(quickFour);
+    countContainer.appendChild(quickSix);
     countContainer.appendChild(plusBtn);
     countContainer.appendChild(minusBtn);
     countContainer.appendChild(saveCount);
+    countContainer.appendChild(serverDone);
 
     serverList.appendChild(nameSpan);
     serverList.appendChild(countContainer);
@@ -148,8 +168,7 @@ function sortNextServer(){
     });
         saveToLocalStorage();
 }
-
-endNight.addEventListener("click", function(){
+    endNight.addEventListener("click", function(){
     waitStaff.innerHTML= '';
     background.value = "horizons";
     body.classList.remove("horizons", "fall", "halloween", "thanksgiving", "christmas", "new-year", "winter", "duck");
